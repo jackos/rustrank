@@ -1,0 +1,11 @@
+[package]
+name = "rustrank"
+version = "0.0.1"
+authors = ["Jack Clayton"]
+description = "Upload results to rustrank.com"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/rustrank/rustrank"
+documentation = "https://rustnote.com"
+homepage = "https://rustnote.com"
+edition = "2021"

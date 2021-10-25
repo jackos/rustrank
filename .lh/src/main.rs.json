@@ -1,0 +1,134 @@
+{
+    "sourceFile": "src/main.rs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 29,
+            "patches": [
+                {
+                    "date": 1631936890612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1631936914334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n fn main() {\n-    let re = Regex::new(r\"(cool|notCool)(w.)\").unwrap();\n+    let re = regex::Regex::new(r\"(cool|notCool)(w.)\").unwrap();\n+    println!(\"Did our date match?\")\n }\n"
+                },
+                {
+                    "date": 1631936923993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n     let re = regex::Regex::new(r\"(cool|notCool)(w.)\").unwrap();\n-    println!(\"Did our date match?\")\n+    println!(\"Did our date match? {}\", re)\n }\n"
+                },
+                {
+                    "date": 1631937035199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n     let re = regex::Regex::new(r\"(cool|notCool)(w.)\").unwrap();\n-    println!(\"Did our date match? {}\", re)\n+    println!(\"Did our date match? {}\", re.is_match(\"coolonemate\"))\n }\n"
+                },
+                {
+                    "date": 1631937063236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n-    let re = regex::Regex::new(r\"(cool|notCool)(w.)\").unwrap();\n-    println!(\"Did our date match? {}\", re.is_match(\"coolonemate\"))\n+    let re = regex::Regex::new(r\"cool|notCool\").unwrap();\n+    println!(\"Did our date match? {}\", re.is_match(\"cool\"))\n }\n"
+                },
+                {
+                    "date": 1631937069271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n     let re = regex::Regex::new(r\"cool|notCool\").unwrap();\n-    println!(\"Did our date match? {}\", re.is_match(\"cool\"))\n+    println!(\"Did our date match? {}\", re.is_match(\"notCool\"))\n }\n"
+                },
+                {
+                    "date": 1631937079328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n-    let re = regex::Regex::new(r\"cool|notCool\").unwrap();\n+    let re = regex::Regex::new(r\"cool|notCool\\w.\").unwrap();\n     println!(\"Did our date match? {}\", re.is_match(\"notCool\"))\n }\n"
+                },
+                {
+                    "date": 1631937097739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n-    let re = regex::Regex::new(r\"cool|notCool\\w.\").unwrap();\n-    println!(\"Did our date match? {}\", re.is_match(\"notCool\"))\n+    let re = regex::Regex::new(r\"cool|notCool\\w.shite\").unwrap();\n+    println!(\"Did our date match? {}\", re.is_match(\"notCoolasdfsashite\"))\n }\n"
+                },
+                {
+                    "date": 1631937945972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,7 @@\n fn main() {\n-    let re = regex::Regex::new(r\"cool|notCool\\w.shite\").unwrap();\n-    println!(\"Did our date match? {}\", re.is_match(\"notCoolasdfsashite\"))\n+    let re = regex::Regex::new(r\"test|regex\").unwrap();\n+    println!(\n+        \"Did our date match? {}\",\n+        re.is_match(\"test\") && re.is_match(\"regex\")\n+    )\n }\n"
+                },
+                {
+                    "date": 1631937952918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n fn main() {\n     let re = regex::Regex::new(r\"test|regex\").unwrap();\n     println!(\n         \"Did our date match? {}\",\n-        re.is_match(\"test\") && re.is_match(\"regex\")\n+        re.is_match(\"test\") && re.is_match(\"rege\")\n     )\n }\n"
+                },
+                {
+                    "date": 1631937976454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,4 @@\n fn main() {\n     let re = regex::Regex::new(r\"test|regex\").unwrap();\n-    println!(\n-        \"Did our date match? {}\",\n-        re.is_match(\"test\") && re.is_match(\"rege\")\n-    )\n+    println!(\"Did our date match? {}\", re.is_match(\"test\"))\n }\n"
+                },
+                {
+                    "date": 1631937992991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n-    let re = regex::Regex::new(r\"test|regex\").unwrap();\n+    let re = regex::Regex::new(r\"test|regex\").except(\"Regex problem\");\n     println!(\"Did our date match? {}\", re.is_match(\"test\"))\n }\n"
+                },
+                {
+                    "date": 1631938007120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n-    let re = regex::Regex::new(r\"test|regex\").except(\"Regex problem\");\n+    let re = regex::Regex::new(r\"test|regex\").expect(\"Regex problem\");\n     println!(\"Did our date match? {}\", re.is_match(\"test\"))\n }\n"
+                },
+                {
+                    "date": 1631938377777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n-    let re = regex::Regex::new(r\"test|regex\").expect(\"Regex problem\");\n+    let re = regex::Regex::new(\"test|regex\").expect(\"Regex problem\");\n     println!(\"Did our date match? {}\", re.is_match(\"test\"))\n }\n"
+                },
+                {
+                    "date": 1631943525970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n-    let re = regex::Regex::new(\"test|regex\").expect(\"Regex problem\");\n-    println!(\"Did our date match? {}\", re.is_match(\"test\"))\n+    // let re = regex::Regex::new(r\"test|regex\").expect(\"Regex problem\");\n+    println!(\"Did our date match? {}\", \"test\")\n }\n"
+                },
+                {
+                    "date": 1631949761438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,3 @@\n fn main() {\n-    // let re = regex::Regex::new(r\"test|regex\").expect(\"Regex problem\");\n-    println!(\"Did our date match? {}\", \"test\")\n+    println!(\"Creating a Jupyter Notebook experience for rust\")\n }\n"
+                },
+                {
+                    "date": 1631949803065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n fn main() {\n-    println!(\"Creating a Jupyter Notebook experience for rust\")\n+    println!(\"Creating a Jupyter Notebook experience for rust\");\n+    println!(\"This will be the kernel that communicates with VS Code\");\n }\n"
+                },
+                {
+                    "date": 1631949810549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n fn main() {\n     println!(\"Creating a Jupyter Notebook experience for rust\");\n-    println!(\"This will be the kernel that communicates with VS Code\");\n+    println!(\"This will be the kernel that communicates with VS Code / Browser\");\n }\n"
+                },
+                {
+                    "date": 1631949837489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n fn main() {\n     println!(\"Creating a Jupyter Notebook experience for rust\");\n     println!(\"This will be the kernel that communicates with VS Code / Browser\");\n+    println!(\"Testing cargo functionality\");\n }\n"
+                },
+                {
+                    "date": 1631949842846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n fn main() {\n     println!(\"Creating a Jupyter Notebook experience for rust\");\n     println!(\"This will be the kernel that communicates with VS Code / Browser\");\n-    println!(\"Testing cargo functionality\");\n+    println!(\"Testing cargo and crates.io functionality\");\n }\n"
+                },
+                {
+                    "date": 1631955354081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,9 @@\n fn main() {\n-    println!(\"Creating a Jupyter Notebook experience for rust\");\n-    println!(\"This will be the kernel that communicates with VS Code / Browser\");\n-    println!(\"Testing cargo and crates.io functionality\");\n+    let mut input = std::String::new();\n+    std::io::stdin()\n+        .read_line(&mut input)\n+        .expect(\"Failed to read line\");\n+\n+    let trimmed = input.trim();\n+    let multiplied = trimmed.parse::<u32>().unwrap() * 10;\n }\n"
+                },
+                {
+                    "date": 1631955365160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n fn main() {\n-    let mut input = std::String::new();\n+    let mut input = String::new();\n     std::io::stdin()\n         .read_line(&mut input)\n         .expect(\"Failed to read line\");\n \n"
+                },
+                {
+                    "date": 1631955381025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,6 @@\n         .expect(\"Failed to read line\");\n \n     let trimmed = input.trim();\n     let multiplied = trimmed.parse::<u32>().unwrap() * 10;\n+    println!(\"{}{}\", input, multiplied)\n }\n"
+                },
+                {
+                    "date": 1631955393197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,6 +5,6 @@\n         .expect(\"Failed to read line\");\n \n     let trimmed = input.trim();\n     let multiplied = trimmed.parse::<u32>().unwrap() * 10;\n-    println!(\"{}{}\", input, multiplied)\n+    println!(\"Result: {}{}\", input, multiplied)\n }\n"
+                },
+                {
+                    "date": 1631955677126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,5 @@\n-fn main() {\n-    let mut input = String::new();\n-    std::io::stdin()\n-        .read_line(&mut input)\n-        .expect(\"Failed to read line\");\n+fn main() {}\n \n-    let trimmed = input.trim();\n-    let multiplied = trimmed.parse::<u32>().unwrap() * 10;\n-    println!(\"Result: {}{}\", input, multiplied)\n+fn cool(x: i32) {\n+    return x * 200;\n }\n"
+                },
+                {
+                    "date": 1631955688918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n fn main() {}\n \n-fn cool(x: i32) {\n+fn cool(x: i32) -> i32 {\n     return x * 200;\n }\n"
+                },
+                {
+                    "date": 1631955730620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-fn main() {}\n+fn main() {\n+    println!(\"Wow the number is: {}\", cool(50))\n+}\n \n fn cool(x: i32) -> i32 {\n     return x * 200;\n }\n"
+                },
+                {
+                    "date": 1631955769705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n-fn main() {\n-    println!(\"Wow the number is: {}\", cool(50))\n-}\n+println!(\"Wow the number is: {}\", cool(50))\n \n fn cool(x: i32) -> i32 {\n     return x * 200;\n }\n"
+                },
+                {
+                    "date": 1631956135756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-println!(\"Wow the number is: {}\", cool(50))\n+fn main() {\n+    println!(\"Wow the number is: {}\", cool(50))\n+}\n \n fn cool(x: i32) -> i32 {\n     return x * 200;\n }\n"
+                },
+                {
+                    "date": 1631958997946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n fn main() {\n-    println!(\"Wow the number is: {}\", cool(50))\n+    println!(\n+        \"This will be a Rust kernel that provides an API for literate programming\",\n+        cool(50)\n+    )\n }\n-\n-fn cool(x: i32) -> i32 {\n-    return x * 200;\n-}\n"
+                }
+            ],
+            "date": 1631936890612,
+            "name": "Commit-0",
+            "content": "fn main() {\n    let re = Regex::new(r\"(cool|notCool)(w.)\").unwrap();\n}\n"
+        }
+    ]
+}
